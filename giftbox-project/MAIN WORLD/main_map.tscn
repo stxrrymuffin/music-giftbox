@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsufuck0xrne4"]
+
+[ext_resource type="Texture2D" uid="uid://ci4qbmnnvbm2l" path="res://ASSETS/sunset.jpg" id="1_g8kct"]
+[ext_resource type="PackedScene" uid="uid://d1oh127xov3xh" path="res://MAIN WORLD/cat.tscn" id="2_5d5al"]
+[ext_resource type="Script" uid="uid://delkfawrpniwk" path="res://MAIN WORLD/platforms.gd" id="3_lgcq0"]
+[ext_resource type="PackedScene" uid="uid://b2phw12hb3e7y" path="res://MAIN WORLD/platform.tscn" id="3_xo5wy"]
+
+[sub_resource type="Environment" id="Environment_8ur7n"]
+
+[node name="Main Map" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1400, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_top = -185.0
+offset_right = 594.0
+offset_bottom = 177.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_g8kct")
+
+[node name="cat" parent="." instance=ExtResource("2_5d5al")]
+position = Vector2(79, 381)
+
+[node name="Camera2D" type="Camera2D" parent="cat"]
+position = Vector2(-270, -392)
+anchor_mode = 0
+
+[node name="platforms" type="Node2D" parent="."]
+position = Vector2(15, 519)
+script = ExtResource("3_lgcq0")
+
+[node name="platform4" parent="platforms" instance=ExtResource("3_xo5wy")]
+position = Vector2(362, 0)
+
+[node name="platform3" parent="platforms" instance=ExtResource("3_xo5wy")]
+
+[node name="platform2" parent="platforms" instance=ExtResource("3_xo5wy")]
+position = Vector2(547, -55)
+
+[node name="platform5" parent="platforms" instance=ExtResource("3_xo5wy")]
+position = Vector2(734, -7)
+
+[node name="platform6" parent="platforms" instance=ExtResource("3_xo5wy")]
+position = Vector2(939, -7)
+scale = Vector2(3, 1)
+
+[node name="platform" parent="platforms" instance=ExtResource("3_xo5wy")]
+position = Vector2(181, 0)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(1, 0.380392, 1, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8ur7n")
