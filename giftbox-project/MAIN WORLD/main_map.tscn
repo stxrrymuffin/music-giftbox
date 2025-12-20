@@ -1,28 +1,70 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsufuck0xrne4"]
+[gd_scene load_steps=11 format=3 uid="uid://dsufuck0xrne4"]
 
 [ext_resource type="Texture2D" uid="uid://ci4qbmnnvbm2l" path="res://ASSETS/sunset.jpg" id="1_g8kct"]
+[ext_resource type="Script" uid="uid://gg8q3m0lapwn" path="res://MAIN WORLD/main_map.gd" id="1_itkyy"]
+[ext_resource type="AudioStream" uid="uid://b8c1d4myid1yq" path="res://ASSETS/mice_on_venus.mp3" id="1_lgcq0"]
 [ext_resource type="PackedScene" uid="uid://d1oh127xov3xh" path="res://MAIN WORLD/cat.tscn" id="2_5d5al"]
 [ext_resource type="Script" uid="uid://delkfawrpniwk" path="res://MAIN WORLD/platforms.gd" id="3_lgcq0"]
 [ext_resource type="PackedScene" uid="uid://b2phw12hb3e7y" path="res://MAIN WORLD/platform.tscn" id="3_xo5wy"]
+[ext_resource type="Texture2D" uid="uid://5eguopuovj22" path="res://ASSETS/pillar.png" id="4_rifrk"]
+
+[sub_resource type="Gradient" id="Gradient_itkyy"]
+offsets = PackedFloat32Array(0, 0.61039, 1)
+colors = PackedColorArray(0.952941, 0.643137, 0.654902, 1, 0.596078, 0.513726, 0.67451, 0.176471, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rifrk"]
+gradient = SubResource("Gradient_itkyy")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+metadata/_snap_enabled = true
 
 [sub_resource type="Environment" id="Environment_8ur7n"]
+background_mode = 2
+ambient_light_source = 3
+ambient_light_color = Color(0.352763, 0.552752, 1, 1)
 
 [node name="Main Map" type="Node2D"]
+script = ExtResource("1_itkyy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_lgcq0")
+max_distance = 1e+12
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+[node name="CanvasModulate2" type="CanvasModulate" parent="ParallaxBackground"]
+color = Color(0.470588, 0.415686, 0.545098, 1)
+
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(1400, 0)
+position = Vector2(-8, -92)
+motion_mirroring = Vector2(1600, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-offset_top = -185.0
-offset_right = 594.0
-offset_bottom = 177.0
-scale = Vector2(2.5, 2.5)
+offset_left = 4.0
+offset_top = -1.0
+offset_right = 598.0
+offset_bottom = 361.0
+scale = Vector2(2.8, 2.5)
 texture = ExtResource("1_g8kct")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1000, 0)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.470588, 0.415686, 0.545098, 1)
 
 [node name="cat" parent="." instance=ExtResource("2_5d5al")]
 position = Vector2(79, 381)
+
+[node name="PointLight2D" type="PointLight2D" parent="cat"]
+position = Vector2(2, 1)
+color = Color(1, 1, 1, 0.501961)
+energy = 3.43
+texture = SubResource("GradientTexture2D_rifrk")
+texture_scale = 3.37
 
 [node name="Camera2D" type="Camera2D" parent="cat"]
 position = Vector2(-270, -392)
@@ -32,26 +74,50 @@ anchor_mode = 0
 position = Vector2(15, 519)
 script = ExtResource("3_lgcq0")
 
-[node name="platform4" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(362, 0)
+[node name="platform" parent="platforms" instance=ExtResource("3_xo5wy")]
+position = Vector2(-3, -2)
+scale = Vector2(4.72, 1)
 
 [node name="platform3" parent="platforms" instance=ExtResource("3_xo5wy")]
+position = Vector2(1296, 5)
+scale = Vector2(2.8, 1)
 
 [node name="platform2" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(547, -55)
+position = Vector2(605, 101)
+scale = Vector2(4.36, 1)
+
+[node name="platform4" parent="platforms" instance=ExtResource("3_xo5wy")]
+position = Vector2(1688, 95)
+scale = Vector2(4.53836, 1.13679)
 
 [node name="platform5" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(734, -7)
+position = Vector2(2393, 10)
+scale = Vector2(3.22843, 1.14521)
 
 [node name="platform6" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(939, -7)
-scale = Vector2(3, 1)
+position = Vector2(2979, 16)
+scale = Vector2(2.1912, 1.13901)
 
-[node name="platform" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(181, 0)
+[node name="platform7" parent="platforms" instance=ExtResource("3_xo5wy")]
+position = Vector2(3380, 94)
+scale = Vector2(3.7512, 1.13901)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-color = Color(1, 0.380392, 1, 1)
+[node name="platform8" parent="platforms" instance=ExtResource("3_xo5wy")]
+position = Vector2(3985, 16)
+scale = Vector2(4.5912, 1.13901)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(2, 2)
+scroll_offset = Vector2(4, -109)
+repeat_size = Vector2(1000, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D"]
+offset_left = -6.0
+offset_top = -80.0
+offset_right = 2042.0
+offset_bottom = 1968.0
+scale = Vector2(0.457584, 0.602431)
+texture = ExtResource("4_rifrk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8ur7n")

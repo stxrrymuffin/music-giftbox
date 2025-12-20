@@ -1,0 +1,13 @@
+~ start
+set Globals.in_cutscene = true
+bob: wow idk the plot of this yet
+bob: but the sunset is cool lets move wdyt
+- yah
+	bob: yay ok
+- meh
+	bob: wow be better
+- no
+	bob: too bad
+bob: ok press right arrow key
+set Globals.in_cutscene = false
+=> END
