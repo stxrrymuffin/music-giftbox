@@ -6,12 +6,12 @@ var gravity: int = 900
 var x_direction: int = 0
 var moving: bool = false
 
-var increasing: bool = false
+var increasing: bool = true
 
 signal started_moving
 
 func _ready():
-	pass
+	$cat_light.energy = 0
 	
 func _physics_process(delta):
 	if not is_on_floor():
@@ -32,12 +32,13 @@ func _physics_process(delta):
 		moving = true
 	velocity.x = x_direction * speed
 	move_and_slide()
-	flash_light()
+	if moving:
+		flash_light()
 
 func flash_light():
 	if increasing:
-		$cat_light.energy += 0.00825
-		if $cat_light.energy >= 1:
+		$cat_light.energy += 0.01
+		if $cat_light.energy >= 1.1:
 			increasing = false
 	else:
 		$cat_light.energy -= 0.008

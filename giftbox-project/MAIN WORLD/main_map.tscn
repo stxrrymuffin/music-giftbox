@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsufuck0xrne4"]
+[gd_scene load_steps=15 format=3 uid="uid://dsufuck0xrne4"]
 
 [ext_resource type="Texture2D" uid="uid://ci4qbmnnvbm2l" path="res://ASSETS/sunset.jpg" id="1_g8kct"]
 [ext_resource type="Script" uid="uid://gg8q3m0lapwn" path="res://MAIN WORLD/main_map.gd" id="1_itkyy"]
@@ -7,6 +7,16 @@
 [ext_resource type="Script" uid="uid://delkfawrpniwk" path="res://MAIN WORLD/platforms.gd" id="3_lgcq0"]
 [ext_resource type="PackedScene" uid="uid://b2phw12hb3e7y" path="res://MAIN WORLD/platform.tscn" id="3_xo5wy"]
 [ext_resource type="Texture2D" uid="uid://5eguopuovj22" path="res://ASSETS/pillar.png" id="4_rifrk"]
+[ext_resource type="Texture2D" uid="uid://u8rndl23bjs4" path="res://ASSETS/white_circle_medium.png" id="5_i0rf1"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dbchg"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1000.0
+inherit_velocity_ratio = 20.0
+spread = 180.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
 
 [sub_resource type="Gradient" id="Gradient_i0rf1"]
 offsets = PackedFloat32Array(0, 0.248276, 0.606897)
@@ -112,6 +122,20 @@ rotation = 0.613749
 scale = Vector2(0.406543, 0.527167)
 texture = ExtResource("4_rifrk")
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.961949, 0.915169, 0.940322, 0.498039)
+show_behind_parent = true
+light_mask = 2
+visibility_layer = 2
+z_index = -100
+position = Vector2(870, 429)
+amount = 25
+texture = ExtResource("5_i0rf1")
+lifetime = 10.0
+preprocess = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_dbchg")
+
 [node name="cat" parent="." instance=ExtResource("2_5d5al")]
 position = Vector2(79, 381)
 
@@ -120,6 +144,8 @@ light_mask = 2
 visibility_layer = 2
 position = Vector2(1.5, 12)
 scale = Vector2(1.92188, 1.90625)
+color = Color(0.821431, 0.653972, 0.878368, 1)
+energy = 1.48
 range_item_cull_mask = 2
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_dbchg")
@@ -127,13 +153,12 @@ texture = SubResource("GradientTexture2D_dbchg")
 [node name="background_light" type="PointLight2D" parent="cat"]
 position = Vector2(2, 1)
 color = Color(0.952941, 0.643137, 0.654902, 1)
-energy = 3.17
+energy = 2.69
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_rifrk")
 
 [node name="Camera2D" type="Camera2D" parent="cat"]
-position = Vector2(-270, -392)
-anchor_mode = 0
+position = Vector2(-1, 12)
 
 [node name="platforms" type="Node2D" parent="."]
 position = Vector2(15, 519)
@@ -177,7 +202,7 @@ top_level = true
 light_mask = 4
 visibility_layer = 4
 scroll_scale = Vector2(1.2, 1.2)
-scroll_offset = Vector2(4, -109)
+scroll_offset = Vector2(-68, -111)
 repeat_size = Vector2(1400, 0)
 
 [node name="TextureRect" type="TextureRect" parent="Parallax2D"]

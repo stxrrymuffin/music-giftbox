@@ -8,7 +8,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if $cat.position.y > 700:
+		#$Parallax2D.visible = false
+		#$Parallax2D3.visible = false
+		#$Parallax2D4.visible = false
+		var darkness_tween = create_tween()
+		darkness_tween.tween_property($ParallaxBackground/CanvasModulate2, "color", Color.BLACK, 3)
+		var camera_tween = create_tween().set_ease(Tween.EASE_IN_OUT)
+		camera_tween.tween_property($cat/Camera2D, "zoom", Vector2(2,2),3)
 
 func _play_audio():
 	$AudioStreamPlayer2D.play(0)
