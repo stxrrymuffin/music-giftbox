@@ -8,23 +8,23 @@ size = Vector2(16.3077, 16.3077)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7605"]
 atlas = ExtResource("2_r7605")
-region = Rect2(28, 0, 28, 25)
+region = Rect2(112, 0, 28, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ct3m"]
 atlas = ExtResource("2_r7605")
-region = Rect2(0, 0, 28, 25)
+region = Rect2(28, 0, 28, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opnhm"]
 atlas = ExtResource("2_r7605")
-region = Rect2(28, 0, 28, 25)
+region = Rect2(56, 0, 28, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ww1hu"]
 atlas = ExtResource("2_r7605")
-region = Rect2(56, 0, 28, 25)
+region = Rect2(84, 0, 28, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64nhp"]
 atlas = ExtResource("2_r7605")
-region = Rect2(84, 0, 28, 25)
+region = Rect2(0, 0, 28, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7mgde"]
 atlas = ExtResource("2_r7605")
@@ -80,4 +80,4 @@ visibility_layer = 2
 position = Vector2(1, 11)
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_r7605")
-animation = &"run"
+animation = &"still"

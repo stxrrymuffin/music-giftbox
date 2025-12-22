@@ -19,6 +19,13 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Globals="*res://globals.gd"
 
+[dialogue_manager]
+
+editor/advanced/custom_test_scene_path="uid://bef4nxdr5aoeu"
+runtime/balloon_path="res://CUSTOM_DIALOGUE/balloon.tscn"
+runtime/advanced/custom_test_scene_path="res://addons/dialogue_manager/test_scene.tscn"
+runtime/advanced/dialogue_processor_path=""
+
 [display]
 
 window/stretch/mode="canvas_items"
