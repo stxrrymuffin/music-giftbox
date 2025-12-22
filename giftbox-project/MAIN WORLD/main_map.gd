@@ -16,6 +16,8 @@ func _process(delta):
 		darkness_tween.tween_property($ParallaxBackground/CanvasModulate2, "color", Color.BLACK, 3)
 		var camera_tween = create_tween().set_ease(Tween.EASE_IN_OUT)
 		camera_tween.tween_property($cat/Camera2D, "zoom", Vector2(2,2),3)
+		if $cat.position.y > 3000:
+			get_tree().change_scene_to_file("res://MAIN WORLD/end_screen.tscn")
 
 func _play_audio():
 	$AudioStreamPlayer2D.play(0)

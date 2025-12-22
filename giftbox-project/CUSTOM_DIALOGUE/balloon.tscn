@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bef4nxdr5aoeu"]
+[gd_scene load_steps=15 format=3 uid="uid://bef4nxdr5aoeu"]
 
 [ext_resource type="Script" uid="uid://t4e41medvw3r" path="res://CUSTOM_DIALOGUE/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://cadey0agggmib" path="res://icon.svg" id="2_qoe74"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://bu1kglq4mtnkh" path="res://ASSETS/LowresPixel-Regular.otf" id="3_fubbm"]
+[ext_resource type="AudioStream" uid="uid://bfx2lyjgxq56c" path="res://ASSETS/ac_sfx.mp3" id="6_0g2cp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_top = 6.0
@@ -115,11 +116,11 @@ layer = 100
 script = ExtResource("1_36de5")
 
 [node name="Portrait" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(300, 300)
+custom_minimum_size = Vector2(400, 400)
 offset_left = 34.0
-offset_top = 113.0
-offset_right = 334.0
-offset_bottom = 413.0
+offset_top = 88.0
+offset_right = 434.0
+offset_bottom = 488.0
 texture = ExtResource("2_qoe74")
 
 [node name="Balloon" type="Control" parent="."]
@@ -216,6 +217,9 @@ text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("6_0g2cp")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="finished_typing" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_finished_typing"]
+[connection signal="spoke" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

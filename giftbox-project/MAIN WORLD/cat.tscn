@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dgs51flcdvteo" path="res://ASSETS/cat_run-Sheet.png" id="2_r7605"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_helq4"]
-size = Vector2(16.3077, 16.3077)
+size = Vector2(16.3077, 14.3077)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7605"]
 atlas = ExtResource("2_r7605")
@@ -70,7 +70,7 @@ animations = [{
 script = ExtResource("1_r7605")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 12)
+position = Vector2(-1, 9.50001)
 scale = Vector2(6.5, 6.5)
 shape = SubResource("RectangleShape2D_helq4")
 
@@ -80,4 +80,4 @@ visibility_layer = 2
 position = Vector2(1, 11)
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_r7605")
-animation = &"still"
+animation = &"run"

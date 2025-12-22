@@ -131,13 +131,13 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	
-	var portrait_path: String = "res://ASSETS/%s.png" % dialogue_line.character.to_lower()
+	var portrait_path: String = "res://ASSETS/%s.png" % (dialogue_line.character.to_lower()+dialogue_line.get_tag_value("face"))
+	print(dialogue_line.get_tag_value("face"))
 	print(portrait_path)
 	if FileAccess.file_exists(portrait_path):
 		char_portrait.texture = load(portrait_path)
 	else:
 		char_portrait.texture = null
-	print('hello')
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
@@ -221,3 +221,15 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func _on_dialogue_label_spoke(letter, letter_index, speed):
+	if not letter in ". -":
+		audio_stream_player.pitch_scale = randf_range(0.95,1.05)
+		audio_stream_player.play(randf_range(0.1,2))
+
+
+func _on_dialogue_label_finished_typing():
+	await get_tree().create_timer(1.0).timeout
+	audio_stream_player.stop()
+	print('hi im done')

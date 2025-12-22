@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dsufuck0xrne4"]
+[gd_scene load_steps=18 format=3 uid="uid://dsufuck0xrne4"]
 
 [ext_resource type="Texture2D" uid="uid://ci4qbmnnvbm2l" path="res://ASSETS/sunset.jpg" id="1_g8kct"]
 [ext_resource type="Script" uid="uid://gg8q3m0lapwn" path="res://MAIN WORLD/main_map.gd" id="1_itkyy"]
@@ -7,16 +7,8 @@
 [ext_resource type="Script" uid="uid://delkfawrpniwk" path="res://MAIN WORLD/platforms.gd" id="3_lgcq0"]
 [ext_resource type="PackedScene" uid="uid://b2phw12hb3e7y" path="res://MAIN WORLD/platform.tscn" id="3_xo5wy"]
 [ext_resource type="Texture2D" uid="uid://5eguopuovj22" path="res://ASSETS/pillar.png" id="4_rifrk"]
-[ext_resource type="Texture2D" uid="uid://u8rndl23bjs4" path="res://ASSETS/white_circle_medium.png" id="5_i0rf1"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dbchg"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 1000.0
-inherit_velocity_ratio = 20.0
-spread = 180.0
-initial_velocity_max = 20.0
-gravity = Vector3(0, 0, 0)
+[ext_resource type="PackedScene" uid="uid://cj3xg136qj4ns" path="res://MAIN WORLD/platform_3.tscn" id="7_dbchg"]
+[ext_resource type="Texture2D" uid="uid://d0cakvhb8f8rd" path="res://ASSETS/white_circle_tiny.png" id="8_i0rf1"]
 
 [sub_resource type="Gradient" id="Gradient_i0rf1"]
 offsets = PackedFloat32Array(0, 0.248276, 0.606897)
@@ -42,6 +34,24 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0)
 metadata/_snap_enabled = true
 
+[sub_resource type="Gradient" id="Gradient_dbchg"]
+offsets = PackedFloat32Array(0, 0.465347, 1)
+colors = PackedColorArray(0.628355, 0.578481, 0.922116, 1, 0.848764, 0.563552, 0.729218, 1, 0.86599, 0.583198, 0.48226, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1krq6"]
+gradient = SubResource("Gradient_dbchg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dbchg"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 1000.0
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_1krq6")
+
 [sub_resource type="Environment" id="Environment_8ur7n"]
 background_mode = 2
 ambient_light_source = 3
@@ -60,11 +70,14 @@ max_distance = 1e+12
 color = Color(0.470588, 0.415686, 0.545098, 1)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+light_mask = 8
+visibility_layer = 8
 position = Vector2(-8, -92)
 motion_scale = Vector2(0.05, 0.05)
 motion_mirroring = Vector2(1600, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+light_mask = 8
 offset_left = 12.0
 offset_top = 6.0
 offset_right = 606.0
@@ -122,19 +135,21 @@ rotation = 0.613749
 scale = Vector2(0.406543, 0.527167)
 texture = ExtResource("4_rifrk")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-modulate = Color(0.961949, 0.915169, 0.940322, 0.498039)
-show_behind_parent = true
+[node name="platforms" type="Node2D" parent="."]
+position = Vector2(15, 519)
+script = ExtResource("3_lgcq0")
+
+[node name="platform" parent="platforms" instance=ExtResource("3_xo5wy")]
 light_mask = 2
-visibility_layer = 2
-z_index = -100
-position = Vector2(870, 429)
-amount = 25
-texture = ExtResource("5_i0rf1")
-lifetime = 10.0
-preprocess = 1.0
-randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_dbchg")
+
+[node name="platform_3" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(512, 100)
+
+[node name="platform_5" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(1088, 0)
+
+[node name="platform_4" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(1536, 100)
 
 [node name="cat" parent="." instance=ExtResource("2_5d5al")]
 position = Vector2(79, 381)
@@ -160,42 +175,17 @@ texture = SubResource("GradientTexture2D_rifrk")
 [node name="Camera2D" type="Camera2D" parent="cat"]
 position = Vector2(-1, 12)
 
-[node name="platforms" type="Node2D" parent="."]
-position = Vector2(15, 519)
-script = ExtResource("3_lgcq0")
-
-[node name="platform" parent="platforms" instance=ExtResource("3_xo5wy")]
-light_mask = 2
-position = Vector2(-3, -2)
-scale = Vector2(4.72, 1)
-
-[node name="platform3" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(1296, 5)
-scale = Vector2(2.8, 1)
-
-[node name="platform2" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(605, 101)
-scale = Vector2(4.36, 1)
-
-[node name="platform4" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(1688, 95)
-scale = Vector2(4.53836, 1.13679)
-
-[node name="platform5" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(2393, 10)
-scale = Vector2(3.22843, 1.14521)
-
-[node name="platform6" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(2979, 16)
-scale = Vector2(2.1912, 1.13901)
-
-[node name="platform7" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(3380, 94)
-scale = Vector2(3.7512, 1.13901)
-
-[node name="platform8" parent="platforms" instance=ExtResource("3_xo5wy")]
-position = Vector2(3985, 16)
-scale = Vector2(4.5912, 1.13901)
+[node name="GPUParticles2D" type="GPUParticles2D" parent="cat/Camera2D"]
+modulate = Color(0.96, 0.912, 0.9376, 0.67451)
+show_behind_parent = true
+z_index = -5
+position = Vector2(1, -7)
+amount = 200
+texture = ExtResource("8_i0rf1")
+lifetime = 10.0
+preprocess = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_dbchg")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 top_level = true
