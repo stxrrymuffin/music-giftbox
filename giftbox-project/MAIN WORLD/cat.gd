@@ -28,7 +28,7 @@ func _physics_process(delta):
 		var bodies: Array = $detect_enemy.get_overlapping_bodies()
 		for body in bodies:
 			if body is CharacterBody2D:
-				body.queue_free()
+				body.dead_animation()
 		attacking = true
 		$AnimatedSprite2D.play("attack")
 	

@@ -28,3 +28,5 @@ shape = SubResource("RectangleShape2D_fe88h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4hm5v")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
