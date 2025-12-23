@@ -1,10 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1oh127xov3xh"]
+[gd_scene load_steps=15 format=3 uid="uid://d1oh127xov3xh"]
 
 [ext_resource type="Script" uid="uid://c6w4ii110vvf0" path="res://MAIN WORLD/cat.gd" id="1_r7605"]
 [ext_resource type="Texture2D" uid="uid://dgs51flcdvteo" path="res://ASSETS/cat_run-Sheet.png" id="2_r7605"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_helq4"]
-size = Vector2(16.3077, 14.3077)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ioet"]
+atlas = ExtResource("2_r7605")
+region = Rect2(28, 0, 28, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s646j"]
+atlas = ExtResource("2_r7605")
+region = Rect2(112, 0, 28, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7605"]
 atlas = ExtResource("2_r7605")
@@ -32,6 +37,17 @@ region = Rect2(0, 0, 28, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r7605"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ioet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s646j")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r7605")
@@ -66,13 +82,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ct3m"]
+size = Vector2(11.5556, 17.5556)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7605"]
+size = Vector2(12.4444, 10.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_helq4"]
+size = Vector2(13.5385, 3.07693)
+
 [node name="cat" type="CharacterBody2D"]
 script = ExtResource("1_r7605")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 9.50001)
-scale = Vector2(6.5, 6.5)
-shape = SubResource("RectangleShape2D_helq4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 2
@@ -80,4 +100,32 @@ visibility_layer = 2
 position = Vector2(1, 11)
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_r7605")
-animation = &"run"
+animation = &"attack"
+
+[node name="char_body" type="Area2D" parent="."]
+position = Vector2(1, 11)
+scale = Vector2(4.5, 4.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="char_body"]
+position = Vector2(1.11111, -1.22222)
+shape = SubResource("RectangleShape2D_7ct3m")
+
+[node name="detect_enemy" type="Area2D" parent="."]
+position = Vector2(1, 11)
+scale = Vector2(4.5, 4.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect_enemy"]
+position = Vector2(17.5556, -2.22222)
+shape = SubResource("RectangleShape2D_r7605")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 46)
+scale = Vector2(6.5, 6.5)
+shape = SubResource("RectangleShape2D_helq4")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="char_body" to="." method="_on_char_body_body_entered"]

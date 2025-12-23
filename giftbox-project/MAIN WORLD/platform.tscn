@@ -7,6 +7,8 @@
 size = Vector2(513, 65)
 
 [node name="platform_4" type="AnimatableBody2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_i3okd")
 
 [node name="TextureRect" type="TextureRect" parent="."]

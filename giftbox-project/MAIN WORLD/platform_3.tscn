@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://cj3xg136qj4ns"]
+[gd_scene load_steps=3 format=3 uid="uid://cj3xg136qj4ns"]
 
-[node name="" type="Object"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d4eas"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_488ky"]
+size = Vector2(445, 65)
+
+[node name="platform_3" type="AnimatableBody2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 448.0
+offset_bottom = 128.0
+scale = Vector2(1, 0.5)
+texture = SubResource("CompressedTexture2D_d4eas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(223.5, 32.5)
+shape = SubResource("RectangleShape2D_488ky")

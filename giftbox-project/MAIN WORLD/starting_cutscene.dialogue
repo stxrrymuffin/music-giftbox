@@ -8,6 +8,6 @@ bob: but the sunset is cool lets move wdyt [#face=talk]
 	bob: wow be better
 - no
 	bob: too bad
-bob: ok press right arrow key
+bob: ok press right arrow key [#face=closed]
 set Globals.in_cutscene = false
 => END

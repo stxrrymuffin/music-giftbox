@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dsufuck0xrne4"]
+[gd_scene load_steps=19 format=3 uid="uid://dsufuck0xrne4"]
 
 [ext_resource type="Texture2D" uid="uid://ci4qbmnnvbm2l" path="res://ASSETS/sunset.jpg" id="1_g8kct"]
 [ext_resource type="Script" uid="uid://gg8q3m0lapwn" path="res://MAIN WORLD/main_map.gd" id="1_itkyy"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b2phw12hb3e7y" path="res://MAIN WORLD/platform.tscn" id="3_xo5wy"]
 [ext_resource type="Texture2D" uid="uid://5eguopuovj22" path="res://ASSETS/pillar.png" id="4_rifrk"]
 [ext_resource type="PackedScene" uid="uid://cj3xg136qj4ns" path="res://MAIN WORLD/platform_3.tscn" id="7_dbchg"]
+[ext_resource type="PackedScene" uid="uid://chabs07jriysw" path="res://MAIN WORLD/enemy.tscn" id="8_1krq6"]
 [ext_resource type="Texture2D" uid="uid://d0cakvhb8f8rd" path="res://ASSETS/white_circle_tiny.png" id="8_i0rf1"]
 
 [sub_resource type="Gradient" id="Gradient_i0rf1"]
@@ -139,17 +140,47 @@ texture = ExtResource("4_rifrk")
 position = Vector2(15, 519)
 script = ExtResource("3_lgcq0")
 
-[node name="platform" parent="platforms" instance=ExtResource("3_xo5wy")]
+[node name="start" parent="platforms" instance=ExtResource("3_xo5wy")]
 light_mask = 2
 
 [node name="platform_3" parent="platforms" instance=ExtResource("7_dbchg")]
 position = Vector2(512, 100)
 
-[node name="platform_5" parent="platforms" instance=ExtResource("7_dbchg")]
+[node name="platform_4" parent="platforms" instance=ExtResource("7_dbchg")]
 position = Vector2(1088, 0)
 
-[node name="platform_4" parent="platforms" instance=ExtResource("7_dbchg")]
+[node name="platform_5" parent="platforms" instance=ExtResource("7_dbchg")]
 position = Vector2(1536, 100)
+
+[node name="platform_6" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(2112, 0)
+
+[node name="platform_7" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(2624, 0)
+
+[node name="platform_8" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(3072, 100)
+
+[node name="platform_9" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(3648, 0)
+
+[node name="platform_10" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(4224, -100)
+
+[node name="platform_11" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(4672, 0)
+
+[node name="platform_12" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(5248, -100)
+
+[node name="platform_13" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(5824, -200)
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2(543, 356)
+
+[node name="enemy" parent="Enemies" instance=ExtResource("8_1krq6")]
+position = Vector2(-118, 5)
 
 [node name="cat" parent="." instance=ExtResource("2_5d5al")]
 position = Vector2(79, 381)

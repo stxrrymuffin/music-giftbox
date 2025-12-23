@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ceg5rqtgl6ohd"]
+[gd_scene load_steps=4 format=3 uid="uid://ceg5rqtgl6ohd"]
 
 [ext_resource type="Script" uid="uid://equd5lxpsnm5" path="res://MAIN WORLD/end_screen.gd" id="1_c1j65"]
 [ext_resource type="Texture2D" uid="uid://cadey0agggmib" path="res://icon.svg" id="1_g0obu"]
+[ext_resource type="FontFile" uid="uid://bu1kglq4mtnkh" path="res://ASSETS/LowresPixel-Regular.otf" id="3_e4p3j"]
 
 [node name="End_Screen" type="Node2D"]
 script = ExtResource("1_c1j65")
@@ -13,11 +14,14 @@ offset_right = 635.0
 offset_bottom = 395.0
 texture_normal = ExtResource("1_g0obu")
 
-[node name="TextEdit" type="TextEdit" parent="."]
-offset_right = 1136.0
-offset_bottom = 239.0
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "oh nar"
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -2.0
+offset_top = 64.0
+offset_right = 1153.0
+offset_bottom = 238.0
+theme_override_fonts/normal_font = ExtResource("3_e4p3j")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center][wave amp=50 freq=2]try again?[/wave][/center]"
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
