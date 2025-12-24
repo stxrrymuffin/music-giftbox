@@ -6,18 +6,18 @@ var increasing: bool = false
 func _ready():
 	var tween = create_tween()
 	tween.tween_property($black_screen, "modulate:a", 0, 2.0)
-	await get_tree().create_timer(2.0).timeout
+	await tween.finished
 	$black_screen.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if increasing:
-		$light.energy += 0.1
+		$light.energy += 0.048
 		if $light.energy >= 6:
 			increasing = false
 	else:
-		$light.energy -= 0.1
+		$light.energy -= 0.048
 		if $light.energy <= 0:
 			increasing = true
 

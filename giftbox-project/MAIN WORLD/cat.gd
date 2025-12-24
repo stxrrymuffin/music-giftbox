@@ -31,6 +31,7 @@ func _physics_process(delta):
 				body.dead_animation()
 		attacking = true
 		$AnimatedSprite2D.play("attack")
+		$AudioStreamPlayer2D.play()
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y += jump_power
