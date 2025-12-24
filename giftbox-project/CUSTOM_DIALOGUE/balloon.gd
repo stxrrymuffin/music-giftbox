@@ -131,11 +131,11 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	
-	var portrait_path: String = "res://ASSETS/%s.png" % (dialogue_line.character.to_lower()+dialogue_line.get_tag_value("face"))
+	var portrait_path: String = "res://ASSETS/%s.png.import" % (dialogue_line.character.to_lower()+dialogue_line.get_tag_value("face"))
 	print(dialogue_line.get_tag_value("face"))
 	print(portrait_path)
 	if FileAccess.file_exists(portrait_path):
-		char_portrait.texture = load(portrait_path)
+		char_portrait.texture = ResourceLoader.load(portrait_path.replace(".import",""))
 	else:
 		char_portrait.texture = null
 
