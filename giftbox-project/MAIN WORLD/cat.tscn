@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1oh127xov3xh"]
+[gd_scene load_steps=19 format=3 uid="uid://d1oh127xov3xh"]
 
 [ext_resource type="Script" uid="uid://c6w4ii110vvf0" path="res://MAIN WORLD/cat.gd" id="1_r7605"]
 [ext_resource type="Texture2D" uid="uid://dgs51flcdvteo" path="res://ASSETS/cat_run-Sheet.png" id="2_r7605"]
 [ext_resource type="AudioStream" uid="uid://cs80vpvcc8pj2" path="res://ASSETS/steel_slice.mp3" id="3_7ct3m"]
+[ext_resource type="FontFile" uid="uid://bu1kglq4mtnkh" path="res://ASSETS/LowresPixel-Regular.otf" id="4_opnhm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ioet"]
 atlas = ExtResource("2_r7605")
@@ -89,6 +90,12 @@ size = Vector2(11.5556, 17.5556)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7605"]
 size = Vector2(12.4444, 10.6667)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opnhm"]
+size = Vector2(8.44438, 10.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww1hu"]
+size = Vector2(4.6666, 10.6667)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_helq4"]
 size = Vector2(13.5385, 3.07693)
 
@@ -113,15 +120,35 @@ collision_mask = 3
 position = Vector2(1.11111, -1.22222)
 shape = SubResource("RectangleShape2D_7ct3m")
 
-[node name="detect_enemy" type="Area2D" parent="."]
+[node name="detect_enemy_good" type="Area2D" parent="."]
 position = Vector2(1, 11)
 scale = Vector2(4.5, 4.5)
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detect_enemy"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect_enemy_good"]
 position = Vector2(17.5556, -2.22222)
 shape = SubResource("RectangleShape2D_r7605")
+
+[node name="detect_enemy_great" type="Area2D" parent="."]
+position = Vector2(1, 11)
+scale = Vector2(4.5, 4.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect_enemy_great"]
+position = Vector2(15.5556, -2.22222)
+shape = SubResource("RectangleShape2D_opnhm")
+
+[node name="detect_enemy_perf" type="Area2D" parent="."]
+position = Vector2(1, 11)
+scale = Vector2(4.5, 4.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect_enemy_perf"]
+position = Vector2(13.6667, -2.22222)
+shape = SubResource("RectangleShape2D_ww1hu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 46)
@@ -130,6 +157,15 @@ shape = SubResource("RectangleShape2D_helq4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_7ct3m")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 30.0
+offset_top = -63.0
+offset_right = 206.0
+offset_bottom = 5.0
+rotation = -0.322233
+theme_override_fonts/normal_font = ExtResource("4_opnhm")
+theme_override_font_sizes/normal_font_size = 25
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="char_body" to="." method="_on_char_body_body_entered"]

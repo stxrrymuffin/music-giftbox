@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx0kdyodgyc77"]
+
+[ext_resource type="Script" uid="uid://dgj5qmbk1n52o" path="res://MAIN WORLD/title_screen.gd" id="1_ip0mm"]
+[ext_resource type="FontFile" uid="uid://bu1kglq4mtnkh" path="res://ASSETS/LowresPixel-Regular.otf" id="2_pvphi"]
+
+[node name="title_screen" type="Node2D"]
+script = ExtResource("1_ip0mm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_top = 140.0
+offset_right = 1153.0
+offset_bottom = 227.0
+theme_override_fonts/normal_font = ExtResource("2_pvphi")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]title of game[/center]"
+
+[node name="Start" type="TextureButton" parent="."]
+offset_left = 456.0
+offset_top = 265.0
+offset_right = 703.0
+offset_bottom = 365.0
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

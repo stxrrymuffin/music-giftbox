@@ -188,14 +188,26 @@ position = Vector2(6400, -200)
 [node name="platform_15" parent="platforms" instance=ExtResource("7_dbchg")]
 position = Vector2(6976, -300)
 
+[node name="platform_16" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(7552, -300)
+
+[node name="platform_17" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(8000, -100)
+
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(543, 356)
 
 [node name="enemy" parent="Enemies" instance=ExtResource("8_1krq6")]
-position = Vector2(5598, -286)
+position = Vector2(5557, -292)
 
 [node name="enemy3" parent="Enemies" instance=ExtResource("8_1krq6")]
 position = Vector2(6244, -289)
+
+[node name="enemy4" parent="Enemies" instance=ExtResource("8_1krq6")]
+position = Vector2(6820, -234)
+
+[node name="enemy5" parent="Enemies" instance=ExtResource("8_1krq6")]
+position = Vector2(7405, -263)
 
 [node name="enemy2" parent="Enemies" instance=ExtResource("8_1krq6")]
 position = Vector2(-102, -124)

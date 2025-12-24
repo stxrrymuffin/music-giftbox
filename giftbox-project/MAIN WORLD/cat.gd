@@ -25,13 +25,30 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("still")
 	
 	if Input.is_action_just_pressed("attack"):
-		var bodies: Array = $detect_enemy.get_overlapping_bodies()
+		var bodies: Array = $detect_enemy_good.get_overlapping_bodies()
+		var score = 0
+		var text_display = "Miss!"
+		if bodies:
+			score = 10
+			text_display = "Good!"
+		if $detect_enemy_great.get_overlapping_bodies():
+			score = 30
+			text_display = "Great!"
+		if $detect_enemy_perf.get_overlapping_bodies():
+			score = 50
+			text_display = "Perfect!"
+		print(score)
 		for body in bodies:
 			if body is CharacterBody2D:
 				body.dead_animation()
 		attacking = true
 		$AnimatedSprite2D.play("attack")
 		$AudioStreamPlayer2D.play()
+		$RichTextLabel.set_indexed("modulate:a",1)
+		$RichTextLabel.text = text_display
+		await get_tree().create_timer(1.0).timeout
+		var tween = create_tween()
+		tween.tween_property($RichTextLabel, "modulate:a", 0, 1.0)
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y += jump_power
