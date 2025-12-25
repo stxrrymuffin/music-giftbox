@@ -229,7 +229,7 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 func _on_dialogue_label_spoke(letter, letter_index, speed):
 	if not letter in ". -":
-		audio_stream_player.pitch_scale = randf_range(0.95,1.05)
+		audio_stream_player.pitch_scale = randf_range(0.7,1.0)
 		audio_stream_player.play(randf_range(0.1,2))
 
 

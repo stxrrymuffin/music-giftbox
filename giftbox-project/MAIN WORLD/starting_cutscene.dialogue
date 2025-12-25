@@ -1,18 +1,34 @@
 ~ start
 if not Globals.played_through:
 	set Globals.in_cutscene = true
-	bob: wow idk the plot of this yet [#face=closed]
-	bob: but the sunset is cool lets move wdyt [#face=talk]
-	- yah
-		bob: yay ok
-	- meh
-		bob: wow be better
-	- no
-		bob: too bad
-	bob: ok press right arrow key [#face=closed]
+	bob: after decades of grueling work... [#face=closed]
+	bob: fighting off enemies, uhh fighting off more enemies...[#face=talk]
+	bob: i still haven't found the legendary [wave]santa hat[/wave] yet...
+	bob: can i truly call this a [shake]hacky holiday[/shake] without one? [#face=closed]
+	- you still can!
+		bob: shut it! [#face=talk]
+	- absolutely not!
+		bob: you are absolutely right! [#face=talk]
+	bob: [wave]*sigh*[/wave] i can't even move anymore on my own. [#face=closed]
+	bob: that's why i've summoned you today, [tornado radius=5.0]all-seeing god[/tornado]. [#face=talk]
+	bob: legends say that at the end of these [shake]perilous ruins[/shake], there is a [wave]santa hat[/wave] awaiting us.
+	bob: only you can be the one to direct my movement to save our holiday spirit.[#face=talk]
+	bob: but be aware -- there are monsters we must stop together along the way.
+	bob: according to what i've read, pressing [ D ] or [ K ] will help defeat them! [#face=talk]
+	bob: got it?
+	- got it!
+		bob: slay girliepop :thumbs-up emoji: [#face=closed]
+	- can you repeat that?
+		bob: dang i should've picked a better god to put my trust in [#face=closed]
+		bob: pressing [ D ] or [ K ] will help defeat the monsters we encounter along the way.
+	bob: additionally, pressing [ W ] or [ UP ARROW ] allows me to jump. [#face=talk]
+	bob: that's all i have to say at this point.
+	bob: you need only press the [ RIGHT ARROW ] key to start...[#face=closed]
 	set Globals.in_cutscene = false
 	set Globals.played_through = true
 else:
-	bob: remember, press right arrow to start.
-	bob: hf!
+	bob: be aware - there are monsters we must stop together along the way. [#face=talk]
+	bob: according to what i've read, pressing [ D ] or [ K ] will help defeat them! 
+	bob: additionally, pressing [ W ] or [ UP ARROW ] allows me to jump. [#face=talk]
+	bob: you need only press the right arrow key to start...[#face=closed]
 => END

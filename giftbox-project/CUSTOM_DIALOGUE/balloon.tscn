@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cadey0agggmib" path="res://icon.svg" id="2_qoe74"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://bu1kglq4mtnkh" path="res://ASSETS/LowresPixel-Regular.otf" id="3_fubbm"]
-[ext_resource type="AudioStream" uid="uid://bfx2lyjgxq56c" path="res://ASSETS/ac_sfx.mp3" id="6_0g2cp"]
+[ext_resource type="AudioStream" uid="uid://bd2rs21l1lj3g" path="res://ASSETS/ac_sfx_trimmed.mp3" id="6_0g2cp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_top = 6.0
@@ -175,6 +175,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("3_fubbm")
 text = "Dialogue..."
+seconds_per_step = 0.04
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(20, 10)
