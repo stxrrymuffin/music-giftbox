@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0p1g31f0cv6h"]
+
+[ext_resource type="Script" uid="uid://banj5h1hasmjo" path="res://MAIN WORLD/hat.gd" id="1_iidd6"]
+[ext_resource type="Texture2D" uid="uid://bqvb0qvg8cky6" path="res://ASSETS/santa_hat.webp" id="1_xp0yh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iidd6"]
+size = Vector2(9.20819, 8.28901)
+
+[node name="hat" type="Area2D"]
+script = ExtResource("1_iidd6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.106111, 0.104649)
+texture = ExtResource("1_xp0yh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(31.5, 26.5)
+scale = Vector2(6.84173, 6.39401)
+shape = SubResource("RectangleShape2D_iidd6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

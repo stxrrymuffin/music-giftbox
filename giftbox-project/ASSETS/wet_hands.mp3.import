@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/wet_hands.mp3-0d05c4416effa578b1d8f873fc6196b
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

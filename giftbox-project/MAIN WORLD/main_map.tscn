@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dsufuck0xrne4"]
+[gd_scene load_steps=25 format=3 uid="uid://dsufuck0xrne4"]
 
 [ext_resource type="Texture2D" uid="uid://ci4qbmnnvbm2l" path="res://ASSETS/sunset.jpg" id="1_g8kct"]
 [ext_resource type="Script" uid="uid://gg8q3m0lapwn" path="res://MAIN WORLD/main_map.gd" id="1_itkyy"]
@@ -12,6 +12,20 @@
 [ext_resource type="Texture2D" uid="uid://d0cakvhb8f8rd" path="res://ASSETS/white_circle_tiny.png" id="8_i0rf1"]
 [ext_resource type="PackedScene" uid="uid://boo04sy2lxclj" path="res://MAIN WORLD/platform_tiny.tscn" id="8_momjs"]
 [ext_resource type="FontFile" uid="uid://bu1kglq4mtnkh" path="res://ASSETS/LowresPixel-Regular.otf" id="11_1x8wo"]
+[ext_resource type="PackedScene" uid="uid://d0p1g31f0cv6h" path="res://MAIN WORLD/hat.tscn" id="12_cvrqp"]
+
+[sub_resource type="Gradient" id="Gradient_rifrk"]
+offsets = PackedFloat32Array(0, 0.241379, 0.737931)
+colors = PackedColorArray(0.952941, 0.643137, 0.654902, 1, 0.571765, 0.385882, 0.392941, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cvrqp"]
+gradient = SubResource("Gradient_rifrk")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+metadata/_snap_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_1krq6"]
 offsets = PackedFloat32Array(0, 0.248276, 0.606897)
@@ -23,10 +37,6 @@ width = 192
 height = 192
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="Gradient" id="Gradient_rifrk"]
-offsets = PackedFloat32Array(0, 0.241379, 0.737931)
-colors = PackedColorArray(0.952941, 0.643137, 0.654902, 1, 0.571765, 0.385882, 0.392941, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_rifrk"]
 gradient = SubResource("Gradient_rifrk")
@@ -262,6 +272,9 @@ position = Vector2(15424, 0)
 [node name="platform_35" parent="platforms" instance=ExtResource("7_dbchg")]
 position = Vector2(16000, 0)
 
+[node name="platform_37" parent="platforms" instance=ExtResource("7_dbchg")]
+position = Vector2(16448, 0)
+
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(543, 356)
 
@@ -291,6 +304,20 @@ position = Vector2(14701, -33)
 
 [node name="enemy2" parent="Enemies" instance=ExtResource("8_1krq6")]
 position = Vector2(-102, -124)
+
+[node name="hat" parent="." instance=ExtResource("12_cvrqp")]
+position = Vector2(16783, 467)
+scale = Vector2(1.36413, 1.36995)
+
+[node name="background_light" type="PointLight2D" parent="hat"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(2, 1)
+color = Color(0.952941, 0.643137, 0.654902, 1)
+energy = 1.25
+range_item_cull_mask = 3
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_cvrqp")
 
 [node name="cat" parent="." instance=ExtResource("2_5d5al")]
 position = Vector2(51, 379)
