@@ -138,6 +138,10 @@ func apply_dialogue_line() -> void:
 		char_portrait.texture = ResourceLoader.load(portrait_path.replace(".import",""))
 	else:
 		char_portrait.texture = null
+		
+	var tween = create_tween()
+	tween.tween_property($Portrait, "position", $Portrait.position + Vector2(0, -20), 0.15)
+	tween.chain().tween_property($Portrait, "position", $Portrait.position, 0.15)
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line

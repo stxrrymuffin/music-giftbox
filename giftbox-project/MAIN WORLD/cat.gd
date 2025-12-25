@@ -44,11 +44,11 @@ func _physics_process(delta):
 		attacking = true
 		$AnimatedSprite2D.play("attack")
 		$AudioStreamPlayer2D.play()
-		$RichTextLabel.set_indexed("modulate:a",1)
+		$RichTextLabel.set_indexed("modulate:a",0.8)
 		$RichTextLabel.text = text_display
-		await get_tree().create_timer(1.0).timeout
 		var tween = create_tween()
-		tween.tween_property($RichTextLabel, "modulate:a", 0, 1.0)
+		tween.tween_property($RichTextLabel, "modulate:a", 1, 1)
+		tween.chain().tween_property($RichTextLabel, "modulate:a", 0, 1.0)
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y += jump_power

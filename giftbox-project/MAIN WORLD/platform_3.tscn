@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj3xg136qj4ns"]
+[gd_scene load_steps=4 format=3 uid="uid://cj3xg136qj4ns"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d4eas"]
 load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_488ky"]
+load_path = "res://.godot/imported/pillar_platform.png-fb330b63807b71a42eab146962bb98fb.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_488ky"]
 size = Vector2(445, 65)
@@ -15,6 +18,15 @@ offset_right = 448.0
 offset_bottom = 128.0
 scale = Vector2(1, 0.5)
 texture = SubResource("CompressedTexture2D_d4eas")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -25.0
+offset_top = -113.0
+offset_right = 103.0
+offset_bottom = 47.0
+rotation = -1.5708
+scale = Vector2(-2.36624, 3.09628)
+texture = SubResource("CompressedTexture2D_488ky")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(223.5, 32.5)

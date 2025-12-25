@@ -1,17 +1,22 @@
-[gd_scene load_steps=19 format=3 uid="uid://d1oh127xov3xh"]
+[gd_scene load_steps=21 format=3 uid="uid://d1oh127xov3xh"]
 
 [ext_resource type="Script" uid="uid://c6w4ii110vvf0" path="res://MAIN WORLD/cat.gd" id="1_r7605"]
 [ext_resource type="Texture2D" uid="uid://dgs51flcdvteo" path="res://ASSETS/cat_run-Sheet.png" id="2_r7605"]
+[ext_resource type="Texture2D" uid="uid://djsaq0icejtet" path="res://ASSETS/cat_attack-Sheet.png" id="2_ww1hu"]
 [ext_resource type="AudioStream" uid="uid://cs80vpvcc8pj2" path="res://ASSETS/steel_slice.mp3" id="3_7ct3m"]
 [ext_resource type="FontFile" uid="uid://bu1kglq4mtnkh" path="res://ASSETS/LowresPixel-Regular.otf" id="4_opnhm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ioet"]
-atlas = ExtResource("2_r7605")
-region = Rect2(28, 0, 28, 25)
+[sub_resource type="AtlasTexture" id="AtlasTexture_38w2w"]
+atlas = ExtResource("2_ww1hu")
+region = Rect2(80, 0, 40, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s646j"]
-atlas = ExtResource("2_r7605")
-region = Rect2(112, 0, 28, 25)
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1w6u"]
+atlas = ExtResource("2_ww1hu")
+region = Rect2(120, 0, 40, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vd3x"]
+atlas = ExtResource("2_ww1hu")
+region = Rect2(160, 0, 40, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7605"]
 atlas = ExtResource("2_r7605")
@@ -41,14 +46,17 @@ region = Rect2(0, 0, 28, 25)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0ioet")
+"texture": SubResource("AtlasTexture_38w2w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s646j")
+"texture": SubResource("AtlasTexture_x1w6u")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_5vd3x")
 }],
 "loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -91,13 +99,13 @@ size = Vector2(11.5556, 17.5556)
 size = Vector2(12.4444, 10.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opnhm"]
-size = Vector2(8.44438, 10.6667)
+size = Vector2(9.77771, 10.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ww1hu"]
-size = Vector2(4.6666, 10.6667)
+size = Vector2(6.88882, 10.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_helq4"]
-size = Vector2(13.5385, 3.07693)
+size = Vector2(8.15385, 3.07693)
 
 [node name="cat" type="CharacterBody2D"]
 script = ExtResource("1_r7605")
@@ -105,10 +113,11 @@ script = ExtResource("1_r7605")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(1, 11)
+position = Vector2(-59, -42)
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_r7605")
 animation = &"attack"
+centered = false
 
 [node name="char_body" type="Area2D" parent="."]
 position = Vector2(1, 11)
@@ -137,7 +146,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect_enemy_great"]
-position = Vector2(15.5556, -2.22222)
+position = Vector2(16.2223, -2.22222)
 shape = SubResource("RectangleShape2D_opnhm")
 
 [node name="detect_enemy_perf" type="Area2D" parent="."]
@@ -147,11 +156,11 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect_enemy_perf"]
-position = Vector2(13.6667, -2.22222)
+position = Vector2(14.7778, -2.22222)
 shape = SubResource("RectangleShape2D_ww1hu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 46)
+position = Vector2(5.5, 46)
 scale = Vector2(6.5, 6.5)
 shape = SubResource("RectangleShape2D_helq4")
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2phw12hb3e7y"]
+[gd_scene load_steps=4 format=3 uid="uid://b2phw12hb3e7y"]
 
 [ext_resource type="Texture2D" uid="uid://cadey0agggmib" path="res://icon.svg" id="1_vwq84"]
+[ext_resource type="Texture2D" uid="uid://cppsu7jaqhg6n" path="res://ASSETS/pillar_platform.png" id="2_i3okd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3okd"]
 size = Vector2(513, 65)
@@ -10,10 +11,20 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 offset_right = 512.0
 offset_bottom = 128.0
 scale = Vector2(1, 0.5)
 texture = ExtResource("1_vwq84")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -24.0
+offset_top = -141.0
+offset_right = 104.0
+offset_bottom = 19.0
+rotation = -1.5708
+scale = Vector2(-2.93074, 3.5377)
+texture = ExtResource("2_i3okd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(257.5, 32.5)

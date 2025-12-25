@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-
+func _ready():
+	$AnimatedSprite2D.play("default")
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -10,6 +11,7 @@ func _physics_process(delta):
 
 func dead_animation():
 	$CollisionShape2D.disabled = true
+	$AnimatedSprite2D.play("dead")
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(self, "rotation_degrees", 1080, 0.5)
