@@ -10,6 +10,7 @@ var increasing: bool = true
 var attacking: bool = false
 
 signal started_moving
+signal increase_score
 
 func _ready():
 	$cat_light.energy = 0
@@ -28,19 +29,22 @@ func _physics_process(delta):
 		var bodies: Array = $detect_enemy_good.get_overlapping_bodies()
 		var score = 0
 		var text_display = "Miss!"
-		if bodies:
-			score = 10
-			text_display = "Good!"
-		if $detect_enemy_great.get_overlapping_bodies():
-			score = 30
-			text_display = "Great!"
-		if $detect_enemy_perf.get_overlapping_bodies():
-			score = 50
-			text_display = "Perfect!"
-		print(score)
 		for body in bodies:
 			if body is CharacterBody2D:
 				body.dead_animation()
+				score = 10
+				text_display = "Good!"
+		for body in $detect_enemy_great.get_overlapping_bodies():
+			if body is CharacterBody2D:
+				score = 30
+				text_display = "Great!"
+		for body in $detect_enemy_perf.get_overlapping_bodies():
+			if body is CharacterBody2D:
+				score = 50
+				text_display = "Perfect!"
+		print(score)
+		
+		increase_score.emit(score)
 		attacking = true
 		$AnimatedSprite2D.play("attack")
 		$AudioStreamPlayer2D.play()

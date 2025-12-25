@@ -1,8 +1,12 @@
 extends Node2D
+
+var score: int = 0
+
 #alled when the node enters the scene tree for the first time.
 func _ready():
 	var player = $cat
 	player.started_moving.connect(_play_audio)
+	player.increase_score.connect(cat_inc_score)
 	DialogueManager.show_dialogue_balloon(load("res://MAIN WORLD/starting_cutscene.dialogue"), "start")
 
 
@@ -24,4 +28,17 @@ func _process(delta):
 
 func _play_audio():
 	$AudioStreamPlayer2D.play(0)
-	return
+	start_scoring()
+
+func start_scoring():
+	var tween = create_tween().set_loops()
+	tween.tween_interval(0.25)
+	tween.tween_callback(increase_score)
+
+func cat_inc_score(val):
+	score += val
+	$CanvasLayer/RichTextLabel.text = str(score)
+	
+func increase_score():
+	score += 1
+	$CanvasLayer/RichTextLabel.text = str(score)

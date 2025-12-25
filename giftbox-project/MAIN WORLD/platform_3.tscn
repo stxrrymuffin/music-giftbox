@@ -18,6 +18,7 @@ offset_right = 448.0
 offset_bottom = 128.0
 scale = Vector2(1, 0.5)
 texture = SubResource("CompressedTexture2D_d4eas")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_left = -25.0
@@ -27,6 +28,7 @@ offset_bottom = 47.0
 rotation = -1.5708
 scale = Vector2(-2.36624, 3.09628)
 texture = SubResource("CompressedTexture2D_488ky")
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(223.5, 32.5)

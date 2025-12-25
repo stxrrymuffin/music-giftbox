@@ -96,13 +96,13 @@ animations = [{
 size = Vector2(11.5556, 17.5556)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7605"]
-size = Vector2(12.4444, 10.6667)
+size = Vector2(12.4444, 28.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opnhm"]
-size = Vector2(9.77771, 10.6667)
+size = Vector2(9.77771, 28.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ww1hu"]
-size = Vector2(6.88882, 10.6667)
+size = Vector2(6.88882, 28.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_helq4"]
 size = Vector2(8.15385, 3.07693)
@@ -136,7 +136,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect_enemy_good"]
-position = Vector2(17.5556, -2.22222)
+position = Vector2(17.5556, 6.77777)
 shape = SubResource("RectangleShape2D_r7605")
 
 [node name="detect_enemy_great" type="Area2D" parent="."]
@@ -146,7 +146,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect_enemy_great"]
-position = Vector2(16.2223, -2.22222)
+position = Vector2(16.2223, 6.77777)
 shape = SubResource("RectangleShape2D_opnhm")
 
 [node name="detect_enemy_perf" type="Area2D" parent="."]
@@ -156,7 +156,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect_enemy_perf"]
-position = Vector2(14.7778, -2.22222)
+position = Vector2(14.7778, 6.77777)
 shape = SubResource("RectangleShape2D_ww1hu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

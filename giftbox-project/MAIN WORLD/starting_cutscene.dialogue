@@ -1,13 +1,18 @@
 ~ start
-set Globals.in_cutscene = true
-bob: wow idk the plot of this yet [#face=closed]
-bob: but the sunset is cool lets move wdyt [#face=talk]
-- yah
-	bob: yay ok
-- meh
-	bob: wow be better
-- no
-	bob: too bad
-bob: ok press right arrow key [#face=closed]
-set Globals.in_cutscene = false
+if not Globals.played_through:
+	set Globals.in_cutscene = true
+	bob: wow idk the plot of this yet [#face=closed]
+	bob: but the sunset is cool lets move wdyt [#face=talk]
+	- yah
+		bob: yay ok
+	- meh
+		bob: wow be better
+	- no
+		bob: too bad
+	bob: ok press right arrow key [#face=closed]
+	set Globals.in_cutscene = false
+	set Globals.played_through = true
+else:
+	bob: remember, press right arrow to start.
+	bob: hf!
 => END

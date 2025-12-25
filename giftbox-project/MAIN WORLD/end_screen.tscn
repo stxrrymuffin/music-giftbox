@@ -71,6 +71,7 @@ pitch_scale = 0.8
 autoplay = true
 
 [node name="black_screen" type="TextureRect" parent="."]
+visible = false
 light_mask = 2
 offset_right = 1166.0
 offset_bottom = 676.0

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://boo04sy2lxclj"]
+
+[ext_resource type="Texture2D" uid="uid://bt81n86tlntjp" path="res://ASSETS/short_pillar_platform.png" id="1_k7kdb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nxgsp"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syr0x"]
+size = Vector2(259, 65)
+
+[node name="platform_3" type="AnimatableBody2D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 256.0
+offset_bottom = 128.0
+scale = Vector2(1, 0.5)
+texture = SubResource("CompressedTexture2D_nxgsp")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = 170.0
+offset_right = 126.0
+offset_bottom = 250.0
+rotation = -1.5708
+scale = Vector2(2.11413, 3.34794)
+texture = ExtResource("1_k7kdb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(130.5, 32.5)
+shape = SubResource("RectangleShape2D_syr0x")
