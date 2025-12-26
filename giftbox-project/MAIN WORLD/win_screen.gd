@@ -5,6 +5,10 @@ extends Node2D
 func _ready():
 	$AnimatedSprite2D.play("default")
 	$AnimatedSprite2D2.play("default")
+	var tween = create_tween()
+	tween.tween_property($black_screen, "modulate:a", 0, 2.0)
+	await tween.finished
+	$black_screen.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

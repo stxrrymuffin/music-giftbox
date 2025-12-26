@@ -13,12 +13,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if increasing:
-		$light.energy += 0.048
+		$light.energy += 0.03
 		if $light.energy >= 6:
 			increasing = false
 	else:
-		$light.energy -= 0.048
-		if $light.energy <= 0:
+		$light.energy -= 0.03
+		if $light.energy <= 2:
 			increasing = true
 
 

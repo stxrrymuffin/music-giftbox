@@ -14,7 +14,7 @@ func dead_animation():
 	$AnimatedSprite2D.play("dead")
 	var tween = create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(self, "rotation_degrees", 1000, 0.5)
+	tween.tween_property(self, "rotation_degrees",640, 0.5)
 	tween.tween_property(self, "position", position + Vector2(700, -700), 0.5)
 	tween.tween_property(self, "scale", Vector2(3,3), 1)
 	tween.EASE_OUT

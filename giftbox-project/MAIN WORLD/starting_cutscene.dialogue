@@ -2,33 +2,34 @@
 set Globals.in_cutscene = true
 if not Globals.played_through:
 	bob: after decades of grueling work... [#face=closed]
-	bob: fighting off enemies, uhh fighting off more enemies...[#face=talk]
-	bob: i still haven't found the legendary [wave]santa hat[/wave] yet...
-	bob: can i truly call this a [shake]hacky holiday[/shake] without one? [#face=closed]
+	bob: fighting off enemies, uhh... and fighting off more enemies...[#face=talk]
+	bob: i still haven't found the legendary [color=lightblue][wave]santa hat[/wave][/color] yet...
+	bob: can i truly call this day a [shake]hacky holiday[/shake] without one? [#face=closed]
 	- you still can!
 		bob: shut it! [#face=talk]
 	- absolutely not!
 		bob: you are absolutely right! [#face=talk]
-	bob: [wave]*sigh*[/wave] i can't even move anymore on my own. [#face=closed]
+	bob: [wave]*sigh*[/wave] i can't even move anymore on my own. these few years have truly taken a toll on me.[#face=closed]
 	bob: that's why i've summoned you today, [tornado radius=5.0]all-seeing god[/tornado]. [#face=talk]
 	bob: legends say that at the end of these [shake]perilous ruins[/shake], there is a [wave]santa hat[/wave] awaiting us.
-	bob: only you can be the one to direct my movement to save our holiday spirit.[#face=talk]
+	bob: once i reach it, only then will i be able to regain my ho ho holy strength and maintain my holiday spirit!
+	bob: until then, only you can be the one to direct my movement.[#face=talk]
 	bob: but be aware -- there are monsters we must stop together along the way. there seems to be one just up ahead.
-	bob: according to what i've read, pressing [ D ] or [ K ] will help defeat them! [#face=talk]
+	bob: according to what i've read, pressing [color=lightblue][ D ][/color] or [color=lightblue][ RIGHT ARROW ][/color] will help defeat them! [#face=talk]
 	bob: got it?
 	- got it!
 		bob: slay girliepop :thumbs-up emoji: [#face=closed]
 	- can you repeat that?
 		bob: dang i should've picked a better god to put my trust in [#face=closed]
-		bob: pressing [ D ] or [ K ] will help defeat the monsters we encounter along the way.
-	bob: additionally, pressing [ W ] or [ UP ARROW ] allows me to jump. [#face=talk]
+		bob: pressing [color=lightblue][ D ][/color] or [color=lightblue][ RIGHT ARROW ][/color] will help defeat the monsters we encounter along the way.
+	bob: additionally, pressing [color=lightblue][ W ][/color] or [color=lightblue][ UP ARROW ][/color] allows me to jump. [#face=talk]
 	bob: that's all i have to say at this point.
-	bob: you need only press the [ RIGHT ARROW ] key to start...[#face=closed]
+	bob: you need only press the [color=lightblue][ D ][/color] or [color=lightblue][ RIGHT ARROW ][/color] key to start...[#face=closed]
 	set Globals.played_through = true
 else:
 	bob: be aware - there are monsters we must stop together along the way. [#face=talk]
-	bob: according to what i've read, pressing [ D ] or [ K ] will help defeat them! 
-	bob: additionally, pressing [ W ] or [ UP ARROW ] allows me to jump. [#face=talk]
-	bob: you need only press the right arrow key to start...[#face=closed]
+	bob: according to what i've read, pressing [color=lightblue][ D ][/color] or [color=lightblue][ RIGHT ARROW ][/color] will help defeat them! 
+	bob: additionally, pressing [color=lightblue][ W ][/color] or [color=lightblue][ UP ARROW ][/color] allows me to jump. [#face=talk]
+	bob: you need only press the [color=lightblue][ D ][/color] or [color=lightblue][ RIGHT ARROW ][/color] key to start...[#face=closed]
 set Globals.in_cutscene = false
 => END

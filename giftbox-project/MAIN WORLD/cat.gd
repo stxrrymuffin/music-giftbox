@@ -25,7 +25,7 @@ func _physics_process(delta):
 	elif not attacking:
 		$AnimatedSprite2D.play("still")
 	
-	if Input.is_action_just_pressed("attack") and not Globals.in_cutscene:
+	if Input.is_action_just_pressed("attack") and not Globals.in_cutscene and moving:
 		var bodies: Array = $detect_enemy_good.get_overlapping_bodies()
 		var score = -10
 		var text_display = "Miss!"
@@ -53,23 +53,24 @@ func _physics_process(delta):
 		var tween = create_tween()
 		tween.tween_property($RichTextLabel, "modulate:a", 1, 1)
 		tween.chain().tween_property($RichTextLabel, "modulate:a", 0, 1.0)
-	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y += jump_power
-		
-	if Input.is_action_pressed("ui_right") and not Globals.in_cutscene:
+	elif Input.is_action_just_pressed("attack") and (not moving and not Globals.in_cutscene):
 		x_direction = 1
 		if moving == false:
 			started_moving.emit()
 		moving = true
+		$cat_light.energy = 1.48
+	
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y += jump_power
+		
+	
 	
 	if Globals.in_cutscene:
 		x_direction = 0
 		$AnimatedSprite2D.play("still")
 	velocity.x = x_direction * speed
 	move_and_slide()
-	if moving:
-		flash_light()
+	flash_light()
 
 func flash_light():
 	if increasing:

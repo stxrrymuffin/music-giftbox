@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://d1oh127xov3xh"]
+[gd_scene load_steps=22 format=3 uid="uid://d1oh127xov3xh"]
 
 [ext_resource type="Script" uid="uid://c6w4ii110vvf0" path="res://MAIN WORLD/cat.gd" id="1_r7605"]
 [ext_resource type="Texture2D" uid="uid://dgs51flcdvteo" path="res://ASSETS/cat_run-Sheet.png" id="2_r7605"]
 [ext_resource type="Texture2D" uid="uid://djsaq0icejtet" path="res://ASSETS/cat_attack-Sheet.png" id="2_ww1hu"]
 [ext_resource type="AudioStream" uid="uid://cs80vpvcc8pj2" path="res://ASSETS/steel_slice.mp3" id="3_7ct3m"]
+[ext_resource type="Texture2D" uid="uid://37jepu4aq12" path="res://ASSETS/cat_idle.png" id="4_64nhp"]
 [ext_resource type="FontFile" uid="uid://bu1kglq4mtnkh" path="res://ASSETS/LowresPixel-Regular.otf" id="4_opnhm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_38w2w"]
@@ -86,10 +87,13 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7mgde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_64nhp")
 }],
 "loop": true,
 "name": &"still",
-"speed": 5.0
+"speed": 1.5
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ct3m"]
@@ -116,7 +120,7 @@ visibility_layer = 2
 position = Vector2(-59, -42)
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_r7605")
-animation = &"attack"
+animation = &"still"
 centered = false
 
 [node name="char_body" type="Area2D" parent="."]
