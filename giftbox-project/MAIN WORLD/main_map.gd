@@ -7,6 +7,7 @@ func _ready():
 	var player = $cat
 	player.started_moving.connect(_play_audio)
 	player.increase_score.connect(cat_inc_score)
+	Globals.switchin_scene.connect(fade_black)
 	DialogueManager.show_dialogue_balloon(load("res://MAIN WORLD/starting_cutscene.dialogue"), "start")
 
 
@@ -40,5 +41,12 @@ func cat_inc_score(val):
 	$CanvasLayer/RichTextLabel.text = str(score)
 	
 func increase_score():
-	score += 1
-	$CanvasLayer/RichTextLabel.text = str(score)
+	if not Globals.in_cutscene:
+		score += 1
+		$CanvasLayer/RichTextLabel.text = str(score)
+
+func fade_black():
+	var tween = create_tween()
+	tween.tween_property($cat/Camera2D/black_screen, "modulate:a", 1.0, 2)
+	await tween.finished
+	get_tree().change_scene_to_file("res://MAIN WORLD/win_screen.tscn")

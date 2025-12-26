@@ -25,9 +25,9 @@ func _physics_process(delta):
 	elif not attacking:
 		$AnimatedSprite2D.play("still")
 	
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and not Globals.in_cutscene:
 		var bodies: Array = $detect_enemy_good.get_overlapping_bodies()
-		var score = 0
+		var score = -10
 		var text_display = "Miss!"
 		for body in bodies:
 			if body is CharacterBody2D:
@@ -62,6 +62,10 @@ func _physics_process(delta):
 		if moving == false:
 			started_moving.emit()
 		moving = true
+	
+	if Globals.in_cutscene:
+		x_direction = 0
+		$AnimatedSprite2D.play("still")
 	velocity.x = x_direction * speed
 	move_and_slide()
 	if moving:

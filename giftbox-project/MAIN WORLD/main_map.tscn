@@ -303,19 +303,16 @@ position = Vector2(13947, 70)
 position = Vector2(14701, -33)
 
 [node name="enemy2" parent="Enemies" instance=ExtResource("8_1krq6")]
-position = Vector2(-102, -124)
+position = Vector2(-167, -122)
 
 [node name="hat" parent="." instance=ExtResource("12_cvrqp")]
-position = Vector2(16783, 467)
+position = Vector2(16746, 471)
 scale = Vector2(1.36413, 1.36995)
 
 [node name="background_light" type="PointLight2D" parent="hat"]
-light_mask = 3
-visibility_layer = 3
 position = Vector2(2, 1)
 color = Color(0.952941, 0.643137, 0.654902, 1)
 energy = 1.25
-range_item_cull_mask = 3
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_cvrqp")
 
@@ -358,6 +355,8 @@ process_material = SubResource("ParticleProcessMaterial_dbchg")
 [node name="black_screen" type="TextureRect" parent="cat/Camera2D"]
 modulate = Color(1, 1, 1, 0)
 light_mask = 0
+visibility_layer = 1023
+z_index = 200
 offset_left = -585.0
 offset_top = -359.0
 offset_right = 581.0

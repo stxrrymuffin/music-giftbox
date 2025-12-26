@@ -1,6 +1,6 @@
 ~ start
+set Globals.in_cutscene = true
 if not Globals.played_through:
-	set Globals.in_cutscene = true
 	bob: after decades of grueling work... [#face=closed]
 	bob: fighting off enemies, uhh fighting off more enemies...[#face=talk]
 	bob: i still haven't found the legendary [wave]santa hat[/wave] yet...
@@ -13,7 +13,7 @@ if not Globals.played_through:
 	bob: that's why i've summoned you today, [tornado radius=5.0]all-seeing god[/tornado]. [#face=talk]
 	bob: legends say that at the end of these [shake]perilous ruins[/shake], there is a [wave]santa hat[/wave] awaiting us.
 	bob: only you can be the one to direct my movement to save our holiday spirit.[#face=talk]
-	bob: but be aware -- there are monsters we must stop together along the way.
+	bob: but be aware -- there are monsters we must stop together along the way. there seems to be one just up ahead.
 	bob: according to what i've read, pressing [ D ] or [ K ] will help defeat them! [#face=talk]
 	bob: got it?
 	- got it!
@@ -24,11 +24,11 @@ if not Globals.played_through:
 	bob: additionally, pressing [ W ] or [ UP ARROW ] allows me to jump. [#face=talk]
 	bob: that's all i have to say at this point.
 	bob: you need only press the [ RIGHT ARROW ] key to start...[#face=closed]
-	set Globals.in_cutscene = false
 	set Globals.played_through = true
 else:
 	bob: be aware - there are monsters we must stop together along the way. [#face=talk]
 	bob: according to what i've read, pressing [ D ] or [ K ] will help defeat them! 
 	bob: additionally, pressing [ W ] or [ UP ARROW ] allows me to jump. [#face=talk]
 	bob: you need only press the right arrow key to start...[#face=closed]
+set Globals.in_cutscene = false
 => END

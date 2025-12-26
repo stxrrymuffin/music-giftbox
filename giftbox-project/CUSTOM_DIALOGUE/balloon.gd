@@ -236,4 +236,3 @@ func _on_dialogue_label_spoke(letter, letter_index, speed):
 func _on_dialogue_label_finished_typing():
 	await get_tree().create_timer(1.0).timeout
 	audio_stream_player.stop()
-	print('hi im done')
