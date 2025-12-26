@@ -3,18 +3,19 @@ set Globals.in_cutscene = true
 if not Globals.played_through:
 	bob: after decades of grueling work... [#face=closed]
 	bob: fighting off enemies, uhh... and fighting off more enemies...[#face=talk]
-	bob: i still haven't found the legendary [color=lightblue][wave]santa hat[/wave][/color] yet...
-	bob: can i truly call this day a [shake]hacky holiday[/shake] without one? [#face=closed]
+	bob: i still haven't found the legendary [wave][color=#F2A0A0]santa hat[/color][/wave] yet...
+	bob: can i truly call this day a [shake][color=#90EE90]hacky holiday[/color][/shake] without one? [#face=closed]
 	- you still can!
 		bob: shut it! [#face=talk]
 	- absolutely not!
 		bob: you are absolutely right! [#face=talk]
 	bob: [wave]*sigh*[/wave] i can't even move anymore on my own. these few years have truly taken a toll on me.[#face=closed]
-	bob: that's why i've summoned you today, [tornado radius=5.0]all-seeing god[/tornado]. [#face=talk]
-	bob: legends say that at the end of these [shake]perilous ruins[/shake], there is a [wave]santa hat[/wave] awaiting us.
-	bob: once i reach it, only then will i be able to regain my ho ho holy strength and maintain my holiday spirit!
+	bob: that's why i've summoned you today, [tornado radius=5.0][color=#FAFAC0]all-seeing god[/color][/tornado]. [#face=talk]
+	bob: legends say that at the end of these [shake]perilous ruins[/shake], there is a [wave][color=#F2A0A0]santa hat[/color][/wave] awaiting us.
+	bob: once i reach it, only then will i be able to regain my [wave][color=#FAFAC0]ho ho holy strength[/color][/wave] and maintain my [wave][color=#FAFAC0]holiday spirit[/color][/wave]!
 	bob: until then, only you can be the one to direct my movement.[#face=talk]
-	bob: but be aware -- there are monsters we must stop together along the way. there seems to be one just up ahead.
+	bob: but be aware -- there are monsters we must stop together along the way. 
+	bob: there seems to be one just up ahead.
 	bob: according to what i've read, pressing [color=lightblue][ D ][/color] or [color=lightblue][ RIGHT ARROW ][/color] will help defeat them! [#face=talk]
 	bob: got it?
 	- got it!

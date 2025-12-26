@@ -307,7 +307,7 @@ position = Vector2(14701, -33)
 position = Vector2(-167, -122)
 
 [node name="hat" parent="." instance=ExtResource("12_cvrqp")]
-position = Vector2(16746, 471)
+position = Vector2(16746, 473)
 scale = Vector2(1.36413, 1.36995)
 
 [node name="background_light" type="PointLight2D" parent="hat"]

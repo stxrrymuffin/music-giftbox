@@ -2,7 +2,7 @@
 set Globals.in_cutscene = true
 bob: i can't believe it...
 bob: after all this time... i finally found it...[#face=closed]
-bob: the one and only [wave]santa hat!!!!!!!!!!!!![/wave][#face=talk]
+bob: the one and only [wave][color=#F2A0A0]santa hat!!!!!!!!!!!!![/color][/wave][#face=talk]
 bob: well, i suppose i must thank you for your help.[#face=closed]
 bob: i hope we get to work together again in the future.[#face=smile]
 - in the future?
@@ -12,15 +12,16 @@ bob: i hope we get to work together again in the future.[#face=smile]
 - seeya!
 	bob: perhaps, we may meet once more indeed.[#face=closed]
 bob: i also see you have accumulated a great sum of [wave]{{Globals.total_points}} points[/wave].[#face=talk]
-if GLobals.total_points > 600:
+if Globals.total_points > 600:
 	bob: not that it means anything, but congrats, i guess.[#face=closed]
-	bob: well done.[#face=closed]
-elif Global.total_points > 400:
+	bob: certainly a job well done.[#face=closed]
+elif Globals.total_points > 400:
 	bob: hm. moderate success.[#face=closed]
 	bob: a job accomplished.[#face=closed]
 else:
 	bob: what the [shake]hack[/shake] have you been doing?![#face=talk]
-	bob: hm. fret not. with this hat, i'll be able to regain my strength.[#face=closed]
-bob: now, we can truly have a [tornado radius=5.0]hacky holiday[/tornado].[#face=csmile]
+	bob: hm. fret not. 
+bob: with this [color=#F2A0A0]hat[/color], i'll be able to regain my strength.[#face=closed]
+bob: now, we can truly have a [tornado radius=5.0][color=#90EE90]hacky holiday[/color][/tornado].[#face=csmile]
 do Globals.switch_scene()
 => END
