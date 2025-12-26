@@ -160,7 +160,8 @@ script = ExtResource("3_lgcq0")
 
 [node name="start" parent="platforms" instance=ExtResource("3_xo5wy")]
 light_mask = 2
-position = Vector2(-43, 0)
+position = Vector2(-75, 0)
+scale = Vector2(1.08, 1)
 
 [node name="platform_3" parent="platforms" instance=ExtResource("7_dbchg")]
 position = Vector2(512, 100)
@@ -317,7 +318,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_cvrqp")
 
 [node name="cat" parent="." instance=ExtResource("2_5d5al")]
-position = Vector2(51, 379)
+position = Vector2(7, 378)
 
 [node name="cat_light" type="PointLight2D" parent="cat"]
 light_mask = 2
