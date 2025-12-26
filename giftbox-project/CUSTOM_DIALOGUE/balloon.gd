@@ -229,10 +229,11 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 func _on_dialogue_label_spoke(letter, letter_index, speed):
 	if not letter in ". -":
-		audio_stream_player.pitch_scale = randf_range(0.9,1.1)
-		audio_stream_player.play(randf_range(0.1,2))
+		audio_stream_player.pitch_scale = randf_range(0.7,1.0)
+		audio_stream_player.play(0)
+		#audio_stream_player.play(randf_range(0.1,2))
 
 
-func _on_dialogue_label_finished_typing():
-	await get_tree().create_timer(1.0).timeout
-	audio_stream_player.stop()
+#func _on_dialogue_label_finished_typing():
+#	await get_tree().create_timer(0.5).timeout
+#	audio_stream_player.stop()

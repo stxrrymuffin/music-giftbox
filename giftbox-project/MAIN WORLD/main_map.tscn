@@ -304,10 +304,10 @@ position = Vector2(13947, 70)
 position = Vector2(14701, -33)
 
 [node name="enemy2" parent="Enemies" instance=ExtResource("8_1krq6")]
-position = Vector2(-167, -122)
+position = Vector2(-167, -261)
 
 [node name="hat" parent="." instance=ExtResource("12_cvrqp")]
-position = Vector2(16746, 473)
+position = Vector2(16743, 471)
 scale = Vector2(1.36413, 1.36995)
 
 [node name="background_light" type="PointLight2D" parent="hat"]

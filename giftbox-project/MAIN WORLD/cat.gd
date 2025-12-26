@@ -64,9 +64,9 @@ func _physics_process(delta):
 		velocity.y += jump_power
 		
 	
-	
 	if Globals.in_cutscene:
 		x_direction = 0
+		moving = false
 		$AnimatedSprite2D.play("still")
 	velocity.x = x_direction * speed
 	move_and_slide()
